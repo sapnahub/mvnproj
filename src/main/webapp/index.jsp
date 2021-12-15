@@ -6,25 +6,25 @@
         <title>Hello Java EE Continuous Delivery!</title>
     </head>
     <body>
-        <h1>Demo Project from Devops</h1>
-        <h1>Nice day DEVOPS.....</h1>
+        <h1>Demo Project from hANEESh Devops</h1>
+        <h1>Nice day DEVOPS..HELLO FOLKS.....</h1>
         <h1>Nice day DEVOPS.....</h1>
         <h1>Nice day DEVOPS.....</h1>
 
 
-<table width="50%" bgcolor="pink" align="center" border="2">
+<table width="50%" bgcolor="cyan" align="center" border="2">
 
 <tr>
 <td colspan=2><center><font size=4><b>HTML Login Page</b></font></center></td>
 </tr>
 
 <tr>
-<td>Username:</td>
+<td>Myname:</td>
 <td><input type="text" size=25 name="userid"></td>
 </tr>
 
 <tr>
-<td>Password:</td>
+<td>justword:</td>
 <td><input type="Password" size=25 name="pwd"></td>
 </tr>
 
