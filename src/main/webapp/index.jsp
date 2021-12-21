@@ -12,7 +12,7 @@
         <h1>Nice day DEVOPS..astala vista baby.....</h1>
 
 
-<table width="50%" bgcolor="cyan" align="center" border="2">
+<table width="70%" bgcolor="black" align="center" border="2">
 
 <tr>
 <td colspan=2><center><font size=4><b>HTML Login Page</b></font></center></td>
