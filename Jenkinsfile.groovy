@@ -2,7 +2,7 @@ node {
     def mymvn
 	stage('CLoning the code') {
 	    git'https://github.com/HaneesH1994/mvnproj.git'
-		mymvn = tool 'Maven'
+		mymvn=tool 'Maven'
 	}
 	stage('building the code') {
           withEnv(["usrmvn=$mymvn"]) {
