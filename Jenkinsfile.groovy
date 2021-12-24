@@ -11,7 +11,7 @@ pipeline {
                 echo "cloning the code"
                 git 'https://github.com/HaneesH1994/mvnproj.git'
                 echo "Building the code"
-                sh "mvn -Dmaven.test.failure.ignore=true clean package install"
+                sh "mvn clean package install"
             }
 
         }
@@ -20,7 +20,7 @@ pipeline {
                 sh '''
                 pwd
                 ls -l
-                sudo cp /var/lib/jenkins/.m2/repository/DEVOPS/MAVEN/2.3/MAVEN-2.3.war /var/lib/tomcat8/webapps/
+                sudo cp /var/lib/jenkins/.m2/repository/DEVOPS/MAVEN/2.5/MAVEN-2.5.war /var/lib/tomcat8/webapps/
                 '''
             }
         }
