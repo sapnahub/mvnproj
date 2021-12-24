@@ -1,26 +1,28 @@
-node {
-    def mvnHome
-    stage('Clone the code') {
-        git 'https://github.com/HaneesH1994/mvnproj.git'
-        mvnHome = tool 'Maven'
+pipeline {
+    agent any
+
+    tools {
+        maven "Maven"
     }
-    stage('Build the code') {
-        withEnv(["MY_HOME=$mvnHome"]) {
-            if (isUnix()) {
-                sh '"$MY_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package install'
-            } else {
-                bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+
+    stages {
+        stage('Build the code') {
+            steps {
+                echo "cloning the code"
+                git 'https://github.com/HaneesH1994/mvnproj.git'
+                echo "Building the code"
+                sh "mvn -Dmaven.test.failure.ignore=true clean package install"
+            }
+
+        }
+        stage('deploy the code') {
+            steps {
+                sh '''
+                pwd
+                ls -l
+                sudo cp /var/lib/jenkins/.m2/repository/DEVOPS/MAVEN/2.3/MAVEN-2.3.war /var/lib/tomcat8/webapps/
+                '''
             }
         }
-    }
-    stage('Deploy the code') {
-        sh '''
-        pwd
-        ls -l
-        echo "deploying war file"
-        sudo cp /var/lib/jenkins/.m2/repository/DEVOPS/MAVEN/2.3/MAVEN-2.3.war /var/lib/tomcat8/webapps/
-        cd /var/lib/tomcat8/webapps/
-        ls -l
-        '''
     }
 }
