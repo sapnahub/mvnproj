@@ -6,6 +6,5 @@ RUN mvn clean package
 
 
 FROM tomcat
-RUN mkdir -p /usr/app/
-COPY --from=build /app/target/*.war /usr/app/app.war
+COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/app.war
 EXPOSE 8080
