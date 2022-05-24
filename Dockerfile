@@ -1,4 +1,4 @@
-FROM maven as build
+FROM openjdk as build
 RUN mkdir app
 COPY . /app
 WORKDIR /app
