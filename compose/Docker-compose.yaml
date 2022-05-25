@@ -1,0 +1,7 @@
+version: "1.17.1"
+services: 
+  my-nginx:
+    build: 
+      dockerfile: Dockerfile
+    ports: 
+      - "80:80"  
