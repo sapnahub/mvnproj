@@ -8,3 +8,4 @@ RUN mvn clean package
 FROM tomcat
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/app.war
 EXPOSE 8080
+CMD ["systemctl", "start", "tomcat"]
